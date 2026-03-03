@@ -12,7 +12,7 @@ def get_movies(
         return movie_queryset.filter(
             genres__id__in=genres_ids,
             actors__id__in=actors_ids
-        )
+        ).distinct()
     if genres_ids:
         return movie_queryset.filter(genres__id__in=genres_ids)
     if actors_ids:
